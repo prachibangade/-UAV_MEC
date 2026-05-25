@@ -55,7 +55,7 @@ fprintf('  >> relay-energy: adaptive E4=%.3e vs uniform E4=%.3e\n\n', ...
 
 %% ---- 4. Sweep: energy vs number of users -----------------------------
 fprintf('--- Sweep: energy vs U ---\n');
-U_list = [4 6 8 10 12 14];
+U_list = [4 6 8 10];
 E_vs_U = zeros(5, numel(U_list));   % rows: proposed, local, full, static, uniform
 for iu = 1:numel(U_list)
     pu = parameters(U_list(iu));
@@ -71,7 +71,7 @@ fprintf('\n');
 
 %% ---- 5. Sweep: energy vs task data size ------------------------------
 fprintf('--- Sweep: energy vs task size ---\n');
-I_list = (20:15:80) * 1e6;          % bits
+I_list = (30:20:70) * 1e6;           % bits
 E_vs_I = zeros(3, numel(I_list));   % proposed, full, static
 for ii = 1:numel(I_list)
     pI = parameters();

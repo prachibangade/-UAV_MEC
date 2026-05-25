@@ -40,7 +40,7 @@ params.q_end   = [ 420, 120;
                    420, 380];
 
 % ---------------- Time discretisation ---------------------------------
-params.N  = 40;                                      % time slots
+params.N  = 20;                                      % time slots
 params.T  = 60;                                      % s  (horizon = deadline)
 params.dt = params.T / params.N;
 params.H  = 100;                                     % m altitude
@@ -75,8 +75,8 @@ params.d_min_sq = params.d_min^2;
 
 % ---------------- Optimisation controls -------------------------------
 params.max_iter = 20;                                % outer BCD iterations
-params.sca_iter = 8;                                 % inner SCA iterations (SP2)
-params.sp1_iter = 6;                                 % inner BCD iterations (SP1)
+params.sca_iter = 5;                                 % inner SCA iterations (SP2)
+params.sp1_iter = 4;                                 % inner BCD iterations (SP1)
 params.conv_tol = 1e-4;
 
 params.l_min   = 0.01;

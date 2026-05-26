@@ -77,7 +77,7 @@ params.d_min_sq = params.d_min^2;
 params.max_iter = 20;                                % outer BCD iterations
 params.sca_iter = 5;                                 % inner SCA iterations (SP2)
 params.sp1_iter = 4;                                 % inner BCD iterations (SP1)
-params.conv_tol = 1e-4;
+params.conv_tol = 1e-6;
 
 params.l_min   = 0.01;
 params.l_max   = 0.99;

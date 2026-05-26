@@ -40,7 +40,7 @@ params.q_end   = [ 420, 120;
                    420, 380];
 
 % ---------------- Time discretisation ---------------------------------
-params.N  = 20;                                      % time slots
+params.N  = 40;                                      % time slots
 params.T  = 60;                                      % s  (horizon = deadline)
 params.dt = params.T / params.N;
 params.H  = 100;                                     % m altitude

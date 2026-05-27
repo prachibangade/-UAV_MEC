@@ -18,10 +18,12 @@ switch lower(name)
 
     case 'full'
         % Force maximum offloading, optimise trajectory
-        p = params; p.l_min = p.l_max - 1e-3;
+        p = params;
+        p.l_min = 0.60;
+        p.l_max = 0.70;
         Q = trajectory_init(p);
         X = SP1_resource_allocation(Q, p);
-        Q = SP2_trajectory_SCA(X, Q, p);
+        [Q, X, ~] = SP2_trajectory_SCA(X, Q, params);
         X = SP1_resource_allocation(Q, p);
         [E, E_break] = energy_model(X, Q, params);
 

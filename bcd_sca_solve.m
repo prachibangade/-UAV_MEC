@@ -35,7 +35,7 @@ for k = 1:params.max_iter
     end
 
     % ---- SP2: trajectory optimisation via SCA -------------------------
-    Q = SP2_trajectory_SCA(X, Q, params);
+    [Q, X, sp2diag] = SP2_trajectory_SCA(X, Q, params);
 
     % ---- evaluate true total energy -----------------------------------
     [E_tot, E_break] = energy_model(X, Q, params);

@@ -45,40 +45,40 @@ exportgraphics(f,'fig3_trajectory.png','Resolution',300);
 fprintf('  saved fig3_trajectory.png\n');
 
 % FIG 4: energy vs number of users
-f = figure('Position',[200 100 560 420]); hold on;
-labels = {'Proposed','Local only','Full offload','Static UAV','Uniform relay'};
-cols   = {C.proposed, C.local, C.full, C.static, C.uniform};
-mk     = {'o','s','d','^','v'};
-for j = 1:size(results.E_vs_U,1)
-    plot(results.U_list, results.E_vs_U(j,:), '-', 'Color',cols{j}, ...
-         'Marker',mk{j}, 'LineWidth',lw, 'MarkerSize',ms, ...
-         'MarkerFaceColor',cols{j}, 'DisplayName',labels{j});
-end
-xlabel('Number of Users U','FontSize',fs);
-ylabel('Total Energy Consumption (J)','FontSize',fs);
-title('Total Energy vs Number of Users','FontSize',fs+1);
-legend('Location','northwest','FontSize',fs-2);
-grid on; box on; set(gca,'FontSize',fs-1);
-exportgraphics(f,'fig4_energy_vs_users.png','Resolution',300);
-fprintf('  saved fig4_energy_vs_users.png\n');
+% f = figure('Position',[200 100 560 420]); hold on;
+% labels = {'Proposed','Local only','Full offload','Static UAV','Uniform relay'};
+% cols   = {C.proposed, C.local, C.full, C.static, C.uniform};
+% mk     = {'o','s','d','^','v'};
+% for j = 1:size(results.E_vs_U,1)
+%     plot(results.U_list, results.E_vs_U(j,:), '-', 'Color',cols{j}, ...
+%          'Marker',mk{j}, 'LineWidth',lw, 'MarkerSize',ms, ...
+%          'MarkerFaceColor',cols{j}, 'DisplayName',labels{j});
+% end
+% xlabel('Number of Users U','FontSize',fs);
+% ylabel('Total Energy Consumption (J)','FontSize',fs);
+% title('Total Energy vs Number of Users','FontSize',fs+1);
+% legend('Location','northwest','FontSize',fs-2);
+% grid on; box on; set(gca,'FontSize',fs-1);
+% exportgraphics(f,'fig4_energy_vs_users.png','Resolution',300);
+% fprintf('  saved fig4_energy_vs_users.png\n');
 
 % FIG 5: energy vs task size
-f = figure('Position',[250 100 560 420]); hold on;
-labels = {'Proposed','Full offload','Static UAV'};
-cols   = {C.proposed, C.full, C.static};
-mk     = {'o','d','^'};
-for j = 1:size(results.E_vs_I,1)
-    plot(results.I_list/1e6, results.E_vs_I(j,:), '-', 'Color',cols{j}, ...
-         'Marker',mk{j}, 'LineWidth',lw, 'MarkerSize',ms, ...
-         'MarkerFaceColor',cols{j}, 'DisplayName',labels{j});
-end
-xlabel('Task Data Size I_u (Mbit)','FontSize',fs);
-ylabel('Total Energy Consumption (J)','FontSize',fs);
-title('Total Energy vs Task Data Size','FontSize',fs+1);
-legend('Location','northwest','FontSize',fs-2);
-grid on; box on; set(gca,'FontSize',fs-1);
-exportgraphics(f,'fig5_energy_vs_tasksize.png','Resolution',300);
-fprintf('  saved fig5_energy_vs_tasksize.png\n');
+% f = figure('Position',[250 100 560 420]); hold on;
+% labels = {'Proposed','Full offload','Static UAV'};
+% cols   = {C.proposed, C.full, C.static};
+% mk     = {'o','d','^'};
+% for j = 1:size(results.E_vs_I,1)
+%     plot(results.I_list/1e6, results.E_vs_I(j,:), '-', 'Color',cols{j}, ...
+%          'Marker',mk{j}, 'LineWidth',lw, 'MarkerSize',ms, ...
+%          'MarkerFaceColor',cols{j}, 'DisplayName',labels{j});
+% end
+% xlabel('Task Data Size I_u (Mbit)','FontSize',fs);
+% ylabel('Total Energy Consumption (J)','FontSize',fs);
+% title('Total Energy vs Task Data Size','FontSize',fs+1);
+% legend('Location','northwest','FontSize',fs-2);
+% grid on; box on; set(gca,'FontSize',fs-1);
+% exportgraphics(f,'fig5_energy_vs_tasksize.png','Resolution',300);
+% fprintf('  saved fig5_energy_vs_tasksize.png\n');
 
 % FIG 7: energy breakdown
 f = figure('Position',[300 100 620 420]);

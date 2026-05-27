@@ -27,7 +27,7 @@ end
 
 % ---------------- Geometry --------------------------------------------
 rng(42);
-params.area_side = 500;                              % m
+params.area_side = 650;                              % m
 params.user_pos  = params.area_side * (0.12 + 0.76 * rand(params.U, 2));
 
 % TBS off-centre so UAV-to-TBS distance varies along the trajectory.
@@ -41,9 +41,9 @@ params.q_end   = [ 420, 120;
 
 % ---------------- Time discretisation ---------------------------------
 params.N  = 40;                                      % time slots
-params.T  = 60;                                      % s  (horizon = deadline)
+params.T  = 40;                                      % s  (horizon = deadline)
 params.dt = params.T / params.N;
-params.H  = 100;                                     % m altitude
+params.H  = 30;                                     % m altitude
 
 % ---------------- Wireless --------------------------------------------
 params.B     = 2e6;                                  % Hz
@@ -61,11 +61,11 @@ params.kappa_uav  = 1e-28;
 params.cycles_per_bit = 1000;                        % O_u
 
 % Task data size per MD (bits).
-params.D = 50e6 * ones(params.U, 1);
+params.D = 80e6 * ones(params.U, 1);
 
 % ---------------- UAV propulsion (light rotary-wing regime) -----------
 params.k1    = 0.0020;                               % blade profile (kappa1)
-params.k2    = 3.0;                                  % induced power  (kappa2)
+params.k2    = 1;                                  % induced power  (kappa2)
 params.v_max = 25;                                   % m/s
 params.v_min = 1;                                    % m/s numerical floor
 
@@ -74,8 +74,8 @@ params.d_min    = 20;                                % m
 params.d_min_sq = params.d_min^2;
 
 % ---------------- Optimisation controls -------------------------------
-params.max_iter = 20;                                % outer BCD iterations
-params.sca_iter = 5;                                 % inner SCA iterations (SP2)
+params.max_iter = 5;                                % outer BCD iterations
+params.sca_iter = 3;                                 % inner SCA iterations (SP2)
 params.sp1_iter = 4;                                 % inner BCD iterations (SP1)
 params.conv_tol = 1e-6;
 
